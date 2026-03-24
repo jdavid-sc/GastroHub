@@ -1,0 +1,44 @@
+<div class="mesero-container">
+
+  <div class="left-panel">
+
+    <h2>Buscar Productos</h2>
+
+    <input 
+      type="text" 
+      placeholder="Buscar producto"
+      [(ngModel)]="busqueda"
+    >
+
+    <div class="productos-list">
+
+      <div 
+        class="producto-card"
+        *ngFor="let producto of productosFiltrados()"
+        (click)="agregarProducto(producto)"
+      >
+        {{ producto.nombre }} - ${{ producto.precio }}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="right-panel">
+
+    <h2>Pedido Actual</h2>
+
+    <div class="pedido-list">
+
+      <div 
+        class="pedido-item"
+        *ngFor="let item of pedido"
+      >
+        {{ item.nombre }} - ${{ item.precio }}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

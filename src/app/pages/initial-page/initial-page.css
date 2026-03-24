@@ -1,0 +1,83 @@
+.home-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #fff5f5, #ffeaea);
+}
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.logo {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  border-bottom: 2px solid white;
+}
+
+.hero-section {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 65px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.hero-section h2 {
+  font-size: 38px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  width: 60%;
+  font-size: 24px;
+  color: gray;
+  margin-bottom: 40px;
+}
+
+.hero-section button {
+  width: 220px;
+  height: 55px;
+  background-color: red;
+  color: white;
+  font-size: 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hero-section button:hover {
+  opacity: 0.9;
+}

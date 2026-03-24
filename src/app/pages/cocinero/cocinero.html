@@ -1,0 +1,48 @@
+<div class="cocinero-container">
+
+  <div class="tabla-pedidos">
+
+    <h2>Pedidos en Cocina</h2>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Pedido</th>
+          <th>Mesa</th>
+          <th>Estado</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr 
+          *ngFor="let pedido of pedidos"
+          (click)="seleccionarPedido(pedido)"
+        >
+          <td>{{ pedido.id }}</td>
+          <td>{{ pedido.mesa }}</td>
+          <td>{{ pedido.estado }}</td>
+          <td>{{ pedido.hora }}</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="detalle-pedido" *ngIf="pedidoSeleccionado">
+
+    <h2>Detalle Pedido {{ pedidoSeleccionado.id }}</h2>
+
+    <div *ngFor="let producto of pedidoSeleccionado.productos">
+
+      {{ producto.nombre }} x {{ producto.cantidad }}
+
+    </div>
+
+  </div>
+
+</div>

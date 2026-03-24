@@ -1,0 +1,34 @@
+.cocinero-container {
+  display: flex;
+  height: 100vh;
+}
+
+.tabla-pedidos {
+  width: 60%;
+  padding: 30px;
+}
+
+.detalle-pedido {
+  width: 40%;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #ffeaea;
+}
