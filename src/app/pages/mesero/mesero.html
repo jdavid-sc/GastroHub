@@ -1,44 +1,72 @@
-<div class="mesero-container">
+<div class="header">
+  <h1>GastroHub</h1>
+</div>
 
+<div class="main-container">
   <div class="left-panel">
-
-    <h2>Buscar Productos</h2>
-
-    <input 
-      type="text" 
-      placeholder="Buscar producto"
-      [(ngModel)]="busqueda"
-    >
-
-    <div class="productos-list">
-
-      <div 
-        class="producto-card"
-        *ngFor="let producto of productosFiltrados()"
-        (click)="agregarProducto(producto)"
-      >
-        {{ producto.nombre }} - ${{ producto.precio }}
+    <div class="catalog-header">
+      <h2>Product Catalogue</h2>
+      <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" placeholder="Buscar producto..." [(ngModel)]="searchTerm">
       </div>
-
     </div>
 
+    <h3 class="section-title">Popular menús</h3>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="product-info">
+          <h4>{{ product.name }}</h4>
+          <p>${{ product.price | number:'1.2-2' }}</p>
+          <div class="action-buttons">
+            <button class="btn-minus" (click)="removeFromOrder(product)">-</button>
+            <button class="btn-plus" (click)="addToOrder(product)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="right-panel">
-
-    <h2>Pedido Actual</h2>
-
-    <div class="pedido-list">
-
-      <div 
-        class="pedido-item"
-        *ngFor="let item of pedido"
-      >
-        {{ item.nombre }} - ${{ item.precio }}
-      </div>
-
+    <div class="order-header">
+      <h3>Mesa Actual: <strong>MESA 101</strong></h3>
     </div>
 
-  </div>
+    <div class="order-list">
+      <div class="order-column-titles" *ngIf="order.length > 0">
+        <span>CANT.</span>
+        <span>ÍTEM</span>
+        <span>VALOR U.</span>
+        <span>VALOR T.</span>
+      </div>
 
+      <div class="order-item" *ngFor="let item of order">
+        <div class="item-main-row">
+          <div class="item-controls">
+            <button (click)="addToOrder(item.product)">+</button>
+            <button (click)="removeFromOrder(item.product)">-</button>
+            <span class="qty">{{ item.quantity }}x</span>
+          </div>
+          <span class="item-name">{{ item.product.name }}</span>
+          <span class="item-price">${{ item.product.price | number:'1.2-2' }}</span>
+          <span class="item-total-price">${{ (item.product.price * item.quantity) | number:'1.2-2' }}</span>
+        </div>
+        <div class="item-notes">
+          <label>NOTAS ÍTEM</label>
+          <input type="text" placeholder="Notas para el plato..." [(ngModel)]="item.notes">
+        </div>
+      </div>
+      
+      <p *ngIf="order.length === 0" class="empty-state">No hay productos en el pedido.</p>
+    </div>
+
+    <div class="order-footer">
+      <div class="total-row">
+        <span>Total Pedido:</span>
+        <span class="total-amount">${{ orderTotal | number:'1.2-2' }}</span>
+      </div>
+      <button class="btn-send" (click)="sendToChef()">ENVIAR AL CHEF</button>
+    </div>
+  </div>
 </div>

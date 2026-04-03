@@ -7,7 +7,7 @@ import { InitialPage } from './pages/initial-page/initial-page';
 import { Cocinero } from './pages/cocinero/cocinero';
 
 import { Admin } from './pages/admin/admin';
-import { Mesero } from './pages/mesero/mesero';
+import { MeseroComponent } from './pages/mesero/mesero';
 
 export const routes: Routes = [
     { path: '', redirectTo:'initial-page', pathMatch: 'full' },
@@ -18,5 +18,5 @@ export const routes: Routes = [
     { path: 'home', component: Home},
     { path: 'cocinero', component: Cocinero},
     { path: 'administrador', component: Admin},
-    { path: 'mesero', component: Mesero},
+    { path: 'mesero', component: MeseroComponent},
 ];
