@@ -19,4 +19,5 @@ export const routes: Routes = [
     { path: 'cocinero', component: Cocinero},
     { path: 'administrador', component: Admin},
     { path: 'mesero', component: Mesero},
+    { path: '**', redirectTo: 'initial-page' }
 ];

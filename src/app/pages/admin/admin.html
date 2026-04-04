@@ -1,1 +1,60 @@
-<p>admin works!</p>
+<app-navbar></app-navbar>
+<div class="admin-container">
+
+  <h1>Administrador GastroHub</h1>
+
+  <div class="dashboard">
+
+    <div class="card">
+      <h3>Total ventas hoy</h3>
+      <p>$250.000</p>
+    </div>
+
+    <div class="card">
+      <h3>Pedidos del día</h3>
+      <p>18</p>
+    </div>
+
+    <div class="card">
+      <h3>Usuarios activos</h3>
+      <p>5</p>
+    </div>
+
+  </div>
+
+  <div class="filters">
+
+    <input type="text" placeholder="Buscar producto">
+
+    <select>
+      <option>Activo</option>
+      <option>Inactivo</option>
+    </select>
+
+  </div>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let producto of productos">
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.estado }}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

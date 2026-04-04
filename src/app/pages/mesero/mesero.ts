@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Navbar } from '../../components/shared/navbar/navbar';
 
 @Component({
   selector: 'app-mesero',
-  imports: [RouterLink, FormsModule, CommonModule],
+  imports: [RouterLink, FormsModule, CommonModule, Navbar],
   templateUrl: './mesero.html',
   styleUrl: './mesero.css',
 })
