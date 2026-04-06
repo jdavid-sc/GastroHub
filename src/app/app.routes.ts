@@ -18,5 +18,10 @@ export const routes: Routes = [
     { path: 'home', component: Home},
     { path: 'cocinero', component: Cocinero},
     { path: 'administrador', component: Admin},
+<<<<<<< HEAD
     { path: 'mesero', component: MeseroComponent},
+=======
+    { path: 'mesero', component: Mesero},
+    { path: '**', redirectTo: 'initial-page' }
+>>>>>>> develop
 ];

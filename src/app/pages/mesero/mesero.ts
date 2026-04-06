@@ -19,6 +19,12 @@ interface OrderItem {
   selector: 'app-mesero',
   standalone: true,
   imports: [CommonModule, FormsModule,],
+import { RouterLink } from '@angular/router';
+import { Navbar } from '../../components/shared/navbar/navbar';
+
+@Component({
+  selector: 'app-mesero',
+  imports: [RouterLink, FormsModule, CommonModule, Navbar],
   templateUrl: './mesero.html',
   styleUrls: ['./mesero.css']
 })
