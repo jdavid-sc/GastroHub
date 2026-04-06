@@ -18,7 +18,7 @@
         <img [src]="product.image" [alt]="product.name">
         <div class="product-info">
           <h4>{{ product.name }}</h4>
-          <p>${{ product.price | number:'1.2-2' }}</p>
+          <p>{{ product.price | currency:'USD':'symbol-narrow':'1.0-0' }}</p>
           <div class="action-buttons">
             <button class="btn-minus" (click)="removeFromOrder(product)">-</button>
             <button class="btn-plus" (click)="addToOrder(product)">+</button>
@@ -49,9 +49,10 @@
             <span class="qty">{{ item.quantity }}x</span>
           </div>
           <span class="item-name">{{ item.product.name }}</span>
-          <span class="item-price">${{ item.product.price | number:'1.2-2' }}</span>
-          <span class="item-total-price">${{ (item.product.price * item.quantity) | number:'1.2-2' }}</span>
+          <span class="item-price">{{ item.product.price | currency:'USD':'symbol-narrow':'1.0-0' }}</span>
+          <span class="item-total-price">{{ (item.product.price * item.quantity) | currency:'USD':'symbol-narrow':'1.0-0' }}</span>
         </div>
+        
         <div class="item-notes">
           <label>NOTAS ÍTEM</label>
           <input type="text" placeholder="Notas para el plato..." [(ngModel)]="item.notes">
@@ -64,7 +65,7 @@
     <div class="order-footer">
       <div class="total-row">
         <span>Total Pedido:</span>
-        <span class="total-amount">${{ orderTotal | number:'1.2-2' }}</span>
+        <span class="total-amount">{{ orderTotal | currency:'USD':'symbol-narrow':'1.0-0' }}</span>
       </div>
       <button class="btn-send" (click)="sendToChef()">ENVIAR AL CHEF</button>
     </div>
