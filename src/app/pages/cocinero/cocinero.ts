@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Navbar } from '../../components/shared/navbar/navbar';
+
 
 @Component({
   selector: 'app-cocinero',
-  imports: [CommonModule, RouterLink, Navbar],
+  imports: [CommonModule],
   templateUrl: './cocinero.html',
   styleUrl: './cocinero.css',
 })

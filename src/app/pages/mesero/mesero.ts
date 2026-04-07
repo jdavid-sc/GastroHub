@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 
 interface Product {
   id: number;
@@ -19,7 +18,7 @@ interface OrderItem {
 @Component({
   selector: 'app-mesero',
   standalone: true,
-  imports: [CommonModule, FormsModule,],
+  imports: [CommonModule, FormsModule],
   templateUrl: './mesero.html',
   styleUrls: ['./mesero.css']
 })
@@ -27,7 +26,6 @@ export class MeseroComponent {
   searchTerm: string = '';
   order: OrderItem[] = [];
 
-  // 10 Platos reales con precios corregidos (50000 = 50 mil)
   products: Product[] = [
     { id: 1, name: 'Margarita Tradicional', price: 50000, image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
     { id: 2, name: 'Risotto de Setas', price: 45000, image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&q=80' },

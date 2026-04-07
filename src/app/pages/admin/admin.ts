@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Navbar } from '../../components/shared/navbar/navbar';
+
 
 @Component({
   selector: 'app-admin',
-  imports: [RouterLink, CommonModule, Navbar],
+  imports: [CommonModule],
   templateUrl: './admin.html',
   styleUrl: './admin.css',
 })
